@@ -1,65 +1,62 @@
 * {
-.dark {
-  background: #0f172a;
-  color: white;
-  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.room-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
+html {
+  scroll-behavior: smooth;
 }
 
-.room-card {
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+body {
+  background: #f8fafc;
+  color: #1e293b;
+  overflow-x: hidden;
 }
 
-.room-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+/* FLOATING ANIMATED CIRCLES */
+.floating {
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: -1;
+  animation: float 10s infinite ease-in-out;
 }
 
-.room-info {
-  padding: 20px;
+.floating1 {
+  width: 300px;
+  height: 300px;
+  background: #3b82f6;
+  top: 10%;
+  left: -100px;
 }
 
-.tour-container,
-.map-container {
-  margin-top: 30px;
+.floating2 {
+  width: 250px;
+  height: 250px;
+  background: #06b6d4;
+  bottom: 10%;
+  right: -80px;
+  animation-delay: 2s;
 }
 
-.tour-container iframe,
-.map-container iframe {
-  width: 100%;
-  height: 450px;
-  border: none;
-  border-radius: 12px;
+.floating3 {
+  width: 180px;
+  height: 180px;
+  background: #8b5cf6;
+  top: 60%;
+  left: 40%;
+  animation-delay: 4s;
 }
 
-.contact-box {
-  text-align: center;
-  margin-top: 30px;
-}
-
-footer {
-  background: #020617;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-@media(max-width: 768px) {
-  .hero-content h2 {
-    font-size: 2rem;
+@keyframes float {
+  0% {
+    transform: translateY(0px);
   }
-
-  nav {
-    flex-wrap: wrap;
+  50% {
+    transform: translateY(-30px);
   }
+  100% {
+    transform: translateY(0px);
 }
