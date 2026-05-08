@@ -1,0 +1,1 @@
+console.log("Room Rental Website Loaded");

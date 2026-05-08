@@ -1,0 +1,65 @@
+* {
+.dark {
+  background: #0f172a;
+  color: white;
+  max-width: 100%;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.room-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.room-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 20px;
+}
+
+.tour-container,
+.map-container {
+  margin-top: 30px;
+}
+
+.tour-container iframe,
+.map-container iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 12px;
+}
+
+.contact-box {
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer {
+  background: #020617;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media(max-width: 768px) {
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+}
