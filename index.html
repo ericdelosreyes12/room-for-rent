@@ -1,70 +1,60 @@
 <!DOCTYPE html>
-        <a
-          href="tel:09994648951"
-          class="btn secondary-btn">
-          Call Landlord
-        </a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DreamStay Room Rental</title>
 
-      </div>
-    </div>
-  </section>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-  </div>
+    body {
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
 
-  <footer>
-    <p>© 2026 Eric Delos Reyes Room Rental</p>
-  </footer>
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  <script>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-const tabButtons = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
+    nav h1 {
+      font-size: 28px;
+    }
 
-// Show default tab
-if(tabContents.length > 0){
-  tabContents[0].classList.add('active');
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-function switchTab(targetId) {
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-  tabContents.forEach(content => {
-    content.classList.remove('active');
-  });
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
 
-  tabButtons.forEach(button => {
-    button.classList.remove('active');
-  });
-
-  const activeTab = document.getElementById(targetId);
-  const activeButton = document.querySelector(`[data-tab="${targetId}"]`);
-
-  if(activeTab) {
-    setTimeout(() => {
-      activeTab.classList.add('active');
-    }, 100);
-  }
-
-  if(activeButton) {
-    activeButton.classList.add('active');
-  }
-}
-
-// Add click events
-
-tabButtons.forEach(button => {
-
-  button.addEventListener('click', () => {
-
-    const target = button.dataset.tab;
-
-    switchTab(target);
-
-  });
-
-});
-
-</script>
-
-<script src="script.js"></script>
-</body>
+    .hero {
+      background: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
 </html>
