@@ -1,62 +1,75 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+.pulse-btn {
+  animation: pulse 2s infinite;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: #f8fafc;
-  color: #1e293b;
-  overflow-x: hidden;
-}
-
-/* FLOATING ANIMATED CIRCLES */
-.floating {
-  position: fixed;
-  border-radius: 50%;
-  opacity: 0.15;
-  z-index: -1;
-  animation: float 10s infinite ease-in-out;
-}
-
-.floating1 {
-  width: 300px;
-  height: 300px;
-  background: #3b82f6;
-  top: 10%;
-  left: -100px;
-}
-
-.floating2 {
-  width: 250px;
-  height: 250px;
-  background: #06b6d4;
-  bottom: 10%;
-  right: -80px;
-  animation-delay: 2s;
-}
-
-.floating3 {
-  width: 180px;
-  height: 180px;
-  background: #8b5cf6;
-  top: 60%;
-  left: 40%;
-  animation-delay: 4s;
-}
-
-@keyframes float {
+@keyframes pulse {
   0% {
-    transform: translateY(0px);
+    box-shadow: 0 0 0 0 rgba(37,99,235,0.7);
   }
-  50% {
-    transform: translateY(-30px);
+  70% {
+    box-shadow: 0 0 0 18px rgba(37,99,235,0);
   }
   100% {
-    transform: translateY(0px);
+    box-shadow: 0 0 0 0 rgba(37,99,235,0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+
+.fade-in-delay {
+  animation: fadeIn 2s ease;
+}
+
+.slide-up {
+  animation: slideUp 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+footer {
+  background: #020617;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+.map-button-wrap {
+  text-align: center;
+  margin-top: 25px;
+}
+
+@media(max-width: 768px) {
+
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+  }
 }
