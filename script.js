@@ -1,12 +1,41 @@
 console.log("Room Rental Website Loaded");
 
-function showTab(tabId) {
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
 
-  // Hide all tab contents
-  const tabs = document.querySelectorAll('.tab-content');
-  tabs.forEach(tab => {
-    tab.classList.remove('active');
+function switchTab(targetId) {
+
+  tabButtons.forEach(button => {
+    button.classList.remove('active');
   });
+
+  tabContents.forEach(content => {
+    content.classList.remove('active');
+  });
+
+  const activeButton = document.querySelector(`[data-tab="${targetId}"]`);
+  const activeContent = document.getElementById(targetId);
+
+  activeButton.classList.add('active');
+
+  setTimeout(() => {
+    activeContent.classList.add('active');
+  }, 100);
+}
+
+// Button Event Listeners
+
+tabButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    const target = button.getAttribute('data-tab');
+
+    switchTab(target);
+
+  });
+
+}););
 
   // Remove active button
   const buttons = document.querySelectorAll('.tab-btn');

@@ -1,45 +1,4 @@
 <!DOCTYPE html>
-        target="_blank"
-        class="btn pulse-btn">
-        Open Google Maps
-      </a>
-    </div>
-  </section>
-
-  </div>
-
-<div class="tab-content" id="reserve">
-
-  <!-- RESERVE -->
-  <section id="reserve" class="section dark">
-    <h2 class="section-title">Reserve a Room</h2>
-
-    <div class="contact-box glass-effect slide-up">
-
-      <div class="contact-item">
-        <i class="fa-solid fa-user"></i>
-        <span>Eric Delos Reyes</span>
-      </div>
-
-      <div class="contact-item">
-        <i class="fa-solid fa-phone"></i>
-        <span>09994648951</span>
-      </div>
-
-      <div class="contact-item">
-        <i class="fa-solid fa-envelope"></i>
-        <span>ericdelosreyes12@gmail.com</span>
-      </div>
-
-      <div class="contact-buttons">
-
-        <a
-          href="https://wa.me/639994648951"
-          target="_blank"
-          class="btn pulse-btn">
-          WhatsApp Reservation
-        </a>
-
         <a
           href="tel:09994648951"
           class="btn secondary-btn">
@@ -56,6 +15,56 @@
     <p>© 2026 Eric Delos Reyes Room Rental</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+// Show default tab
+if(tabContents.length > 0){
+  tabContents[0].classList.add('active');
+}
+
+function switchTab(targetId) {
+
+  tabContents.forEach(content => {
+    content.classList.remove('active');
+  });
+
+  tabButtons.forEach(button => {
+    button.classList.remove('active');
+  });
+
+  const activeTab = document.getElementById(targetId);
+  const activeButton = document.querySelector(`[data-tab="${targetId}"]`);
+
+  if(activeTab) {
+    setTimeout(() => {
+      activeTab.classList.add('active');
+    }, 100);
+  }
+
+  if(activeButton) {
+    activeButton.classList.add('active');
+  }
+}
+
+// Add click events
+
+tabButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    const target = button.dataset.tab;
+
+    switchTab(target);
+
+  });
+
+});
+
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>
