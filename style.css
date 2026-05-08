@@ -1,75 +1,51 @@
-* {
-.pulse-btn {
-  animation: pulse 2s infinite;
+console.log("Room Rental Website Loaded");
+
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+function switchTab(targetId) {
+
+  tabButtons.forEach(button => {
+    button.classList.remove('active');
+  });
+
+  tabContents.forEach(content => {
+    content.classList.remove('active');
+  });
+
+  const activeButton = document.querySelector(`[data-tab="${targetId}"]`);
+  const activeContent = document.getElementById(targetId);
+
+  activeButton.classList.add('active');
+
+  setTimeout(() => {
+    activeContent.classList.add('active');
+  }, 100);
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37,99,235,0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 18px rgba(37,99,235,0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37,99,235,0);
-  }
-}
+// Button Event Listeners
 
-.fade-in {
-  animation: fadeIn 1s ease;
-}
+tabButtons.forEach(button => {
 
-.fade-in-delay {
-  animation: fadeIn 2s ease;
-}
+  button.addEventListener('click', () => {
 
-.slide-up {
-  animation: slideUp 1.5s ease;
-}
+    const target = button.getAttribute('data-tab');
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+    switchTab(target);
 
-@keyframes slideUp {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+  });
 
-footer {
-  background: #020617;
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
+}););
 
-.map-button-wrap {
-  text-align: center;
-  margin-top: 25px;
-}
+  // Remove active button
+  const buttons = document.querySelectorAll('.tab-btn');
+  buttons.forEach(btn => {
+    btn.classList.remove('active');
+  });
 
-@media(max-width: 768px) {
+  // Show selected tab
+  document.getElementById(tabId).classList.add('active');
 
-  .hero-content h2 {
-    font-size: 2.5rem;
-  }
-
-  nav {
-    flex-wrap: wrap;
-  }
-
-  .contact-buttons {
-    flex-direction: column;
-  }
+  // Activate clicked button
+  event.currentTarget.classList.add('active');
 }
